@@ -34,11 +34,13 @@ final class WeatherAPINetworkManager: NetworkService {
             .mapError { error -> NetworkingError in
                 if let noInternetError = error as? URLError, noInternetError.code == .notConnectedToInternet {
                     return NetworkingError.noInternetConnection
+                } else if let decodingError = error as? DecodingError {
+                    return NetworkingError.decodingError((decodingError as NSError).localizedDescription)
+                } else if case let NetworkingError.invalidResponse(statusCode) = error {
+                    return NetworkingError.invalidResponse(statusCode)
+                } else {
+                    return NetworkingError.genericError(error.localizedDescription)
                 }
-                if let decodingError = error as? DecodingError {
-                    return NetworkingError.decodingError((decodingError as NSError).debugDescription)
-                }
-                return NetworkingError.genericError(error.localizedDescription)
             }
             .eraseToAnyPublisher()
     }

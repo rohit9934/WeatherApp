@@ -18,7 +18,7 @@ final class NetworkRequestStrategy: DataFetchingStrategy{
     private var cancellables = Set<AnyCancellable>()
     init(weatherURL: String,
          networkService: NetworkService = WeatherAPINetworkManager(),
-         persistantStorage: PersistanceWeatherStorage = UserDefaultsStorage()){
+         persistantStorage: PersistanceWeatherStorage = CoreDataStorage()){
         self.networkService = networkService
         self.weatherURL = weatherURL
         self.persistantStorage = persistantStorage
@@ -26,11 +26,12 @@ final class NetworkRequestStrategy: DataFetchingStrategy{
     
     func fetch(completion: @escaping(BasicWeatherInfoDataModel) -> Void){
         networkService.fetchData(url: weatherURL)
-            .receive(on: DispatchQueue.main)
+         //   .receive(on: DispatchQueue.main)
             .sink { error in
                 print(error)
             } receiveValue: {  (data: WeatherInformationResponse) in
-                let weatherInfo = BasicWeatherInfoDataModel(response: data)
+                var weatherInfo = BasicWeatherInfoDataModel(response: data)
+                weatherInfo.city = Constants.city
                 self.persistantStorage.save(weatherInformation: weatherInfo)
                 completion(weatherInfo)
             }.store(in: &cancellables)

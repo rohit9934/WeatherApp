@@ -5,7 +5,7 @@
 //  Created by Rohit Sharma on 17/09/23.
 //
 
-enum NetworkingError: Error {
+enum NetworkingError: Error, Equatable {
     case invalidResponse(Int)
     case noInternetConnection
     case invalidURL
