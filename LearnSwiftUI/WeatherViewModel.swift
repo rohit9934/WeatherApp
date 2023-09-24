@@ -15,10 +15,9 @@ import Combine
 final class WeatherViewModel: ObservableObject {
     private var weatherURL: String = ""
     let storageMechanism: PersistanceWeatherStorage = CoreDataStorage()
-    @Published var isInternetPresent: Bool = false
     @Published var weatherInfo = BasicWeatherInfoDataModel()
     var locationManager = LocationManager()
-    var internetConnectPresent: Bool = false
+    var internetConnectPresent: Bool = false // turn this to true to run the project.
     var internetCheck = InternetPresenceService()
     init() {
         let locationDataModel = LocationDataModel(longitude: 32.73,latitude: 74.82, city: "Jammu")

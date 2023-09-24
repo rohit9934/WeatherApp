@@ -33,6 +33,7 @@
 		8CE25B952AC0200D006D762B /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE25B942AC0200D006D762B /* MockURLSession.swift */; };
 		8CE25B972AC022BD006D762B /* NetworkingLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE25B962AC022BD006D762B /* NetworkingLayerTests.swift */; };
 		8CE25B992AC03418006D762B /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE25B982AC03418006D762B /* ViewModelTests.swift */; };
+		8CE25B9B2AC04814006D762B /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE25B9A2AC04814006D762B /* LocationManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		8CE25B942AC0200D006D762B /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		8CE25B962AC022BD006D762B /* NetworkingLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingLayerTests.swift; sourceTree = "<group>"; };
 		8CE25B982AC03418006D762B /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		8CE25B9A2AC04814006D762B /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				8CE25B942AC0200D006D762B /* MockURLSession.swift */,
 				8CE25B962AC022BD006D762B /* NetworkingLayerTests.swift */,
 				8CE25B982AC03418006D762B /* ViewModelTests.swift */,
+				8CE25B9A2AC04814006D762B /* LocationManagerTests.swift */,
 			);
 			path = LearnSwiftUITests;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 			files = (
 				8CE25B952AC0200D006D762B /* MockURLSession.swift in Sources */,
 				8C69BDCC29D2D251008BAB37 /* LearnSwiftUITests.swift in Sources */,
+				8CE25B9B2AC04814006D762B /* LocationManagerTests.swift in Sources */,
 				8CE25B992AC03418006D762B /* ViewModelTests.swift in Sources */,
 				8CE25B972AC022BD006D762B /* NetworkingLayerTests.swift in Sources */,
 			);
