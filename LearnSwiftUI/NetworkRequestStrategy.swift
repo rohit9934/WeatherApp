@@ -11,6 +11,8 @@ protocol DataFetchingStrategy {
     func fetch(completion: @escaping(BasicWeatherInfoDataModel) -> Void)
 }
 
+
+/// This class has only one responsible, take the URL and the type of networking call,(Get or Post), then make the networking
 final class NetworkRequestStrategy: DataFetchingStrategy{
     var networkService : NetworkService
     var weatherURL: String
@@ -26,7 +28,7 @@ final class NetworkRequestStrategy: DataFetchingStrategy{
     
     func fetch(completion: @escaping(BasicWeatherInfoDataModel) -> Void){
         networkService.fetchData(url: weatherURL)
-         //   .receive(on: DispatchQueue.main)
+            .receive(on: DispatchQueue.main)
             .sink { error in
                 print(error)
             } receiveValue: {  (data: WeatherInformationResponse) in

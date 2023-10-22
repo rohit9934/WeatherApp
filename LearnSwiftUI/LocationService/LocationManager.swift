@@ -24,6 +24,10 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func getLocation() {
         locationManagerDidChangeAuthorization(locationManager)
         locationManager(locationManager, didUpdateLocations: [])
+        
+        locationSubject.sink { locationModel in
+            print(locationModel)
+        }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
